@@ -1,73 +1,346 @@
-/* ===== Base ===== */
+/* ==========
+   Base
+========== */
+:root {
+  --text: #111;
+  --muted: #666;
+  --border: #e6e6e6;
+  --bg: #fff;
+  --link: #0b57d0;
+
+  --container: 900px;
+  --topbar-h: 72px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth; /* smooth jump to sections */
+}
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-    color: #222;
-    line-height: 1.6;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
 }
 
+/* Keep anchors visible under fixed nav */
+.anchor-offset {
+  position: relative;
+  top: calc(-1 * var(--topbar-h));
+  height: 0;
+  visibility: hidden;
+}
+
+/* ==========
+   Links
+========== */
 a {
-    color: #0056b3;
-    text-decoration: none;
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ==========
+   Top Bar (fixed)
+========== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
 }
 
-a:hover {
-    text-decoration: underline;
+.topbar-inner {
+  max-width: var(--container);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-/* ===== Layout ===== */
-header, section, footer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 24px;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
 }
 
-header {
-    border-bottom: 1px solid #ddd;
+.brand-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--border);
 }
 
-footer {
-    border-top: 1px solid #ddd;
-    font-size: 0.9em;
-    color: #555;
+.brand-name {
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
-/* ===== Typography ===== */
-h1 {
-    margin-bottom: 4px;
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap; /* handles smaller widths */
+  justify-content: flex-end;
 }
 
-h2 {
-    margin-top: 32px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 4px;
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 6px 6px;
+  border-radius: 8px;
 }
 
-.subtitle {
-    font-size: 1.1em;
-    color: #555;
+.nav-links a:hover {
+  color: var(--text);
+  background: #f7f7f7;
+  text-decoration: none;
 }
 
-.contact {
-    font-size: 0.95em;
+/* ==========
+   Container / Sections
+========== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: calc(var(--topbar-h) + 28px) 20px 32px; /* push content below fixed bar */
 }
 
-/* ===== Content Blocks ===== */
-.item {
-    margin-top: 16px;
+.section {
+  padding: 18px 0 10px;
 }
 
-.meta {
-    font-size: 0.9em;
-    color: #666;
+.section h2 {
+  margin: 0 0 14px;
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
 }
 
-ul {
-    padding-left: 20px;
+/* ==========
+   About section layout
+========== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: start;
 }
 
-.publication-list li {
-    margin-bottom: 12px;
+.about-avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.about-name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.about-subtitle {
+  margin: 6px 0 10px;
+  color: var(--muted);
+}
+
+.body {
+  margin: 12px 0 0;
+}
+
+.subtle {
+  color: var(--muted);
+}
+
+/* Icons row */
+.icon-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 6px 0 10px;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: #fafafa;
+}
+
+.icon-link:hover {
+  background: #f3f3f3;
+  text-decoration: none;
+}
+
+.icon-link svg {
+  width: 18px;
+  height: 18px;
+  fill: #222;
+}
+
+.icon-link span {
+  font-size: 0.95rem;
+}
+
+/* ==========
+   Entries (Education/Experience/Projects)
+========== */
+.entry {
+  padding: 12px 0;
+}
+
+.entry + .entry {
+  border-top: 1px solid var(--border);
+}
+
+.entry-top {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.entry-title {
+  font-weight: 600;
+}
+
+.entry-years {
+  color: var(--muted); /* years in grey */
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.entry-meta {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.entry-body {
+  margin-top: 6px;
+}
+
+.entry-links {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+/* Subsection titles inside Experience */
+.subsection-title {
+  margin: 18px 0 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Bullets */
+.bullets {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.bullets li {
+  margin: 6px 0;
+}
+
+/* ==========
+   Publications
+========== */
+.pub-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.pub-list li {
+  margin: 12px 0;
+}
+
+.pub-title {
+  font-weight: 600;
+}
+
+.pub-venue, .pub-year, .pub-authors {
+  color: var(--muted);
+}
+
+.pub-link {
+  color: var(--link);
+}
+
+/* ==========
+   Skills
+========== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.skill-block {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fafafa;
+}
+
+.skill-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.skill-items {
+  color: var(--muted);
+}
+
+/* ==========
+   Footer
+========== */
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 22px;
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ==========
+   Responsive tweaks
+========== */
+@media (max-width: 760px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
