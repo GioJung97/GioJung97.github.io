@@ -8,7 +8,7 @@
   --bg: #fff;
   --link: #0b57d0;
 
-  --container: 900px;
+  --container: 1000px;
   --topbar-h: 72px;
 }
 
@@ -120,13 +120,19 @@ a:hover { text-decoration: underline; }
   padding: calc(var(--topbar-h) + 28px) 20px 32px; /* push content below fixed bar */
 }
 
+/* Offset anchor scroll for fixed navbar */
+section {
+  scroll-margin-top: var(--topbar-h);
+}
+
+
 .section {
   padding: 18px 0 10px;
 }
 
 .section h2 {
   margin: 0 0 14px;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
 }
@@ -151,7 +157,7 @@ a:hover { text-decoration: underline; }
 
 .about-name {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 }
 
 .about-subtitle {
@@ -192,8 +198,8 @@ a:hover { text-decoration: underline; }
 }
 
 .icon-link svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   fill: #222;
 }
 
@@ -248,7 +254,7 @@ a:hover { text-decoration: underline; }
 /* Subsection titles inside Experience */
 .subsection-title {
   margin: 18px 0 6px;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text);
 }
