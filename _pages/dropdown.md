@@ -5,8 +5,8 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: interests
+  - title: Interests
     permalink: /interests/
-  - title: off topic pages
+  - title: Off Topic Pages
     permalink: /off-topic/
 ---

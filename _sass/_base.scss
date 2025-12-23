@@ -56,6 +56,19 @@ table.table a {
   }
 }
 
+// Ensure news text stays readable in dark mode on reload.
+.news,
+.news li,
+.news p,
+.news span {
+  color: var(--global-text-color);
+}
+
+.news .news-title,
+.news .news-date {
+  color: var(--global-text-color);
+}
+
 blockquote {
   background: var(--global-bg-color);
   border-left: 5px solid var(--global-theme-color);
@@ -300,6 +313,17 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-brand {
     color: var(--global-text-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    .navbar-brand-image {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--global-divider-color);
+    }
   }
 
   .navbar-nav .nav-item .nav-link {

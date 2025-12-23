@@ -9,10 +9,16 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
-
 <div class="publications">
-  <!-- Publications list disabled for GitHub Pages compatibility (jekyll-scholar tag not supported). -->
+  <ol>
+    <li>
+      Example Paper Title. <span class="authors">First Author, Second Author</span>. <em>Venue</em>, 2024.
+    </li>
+    <li>
+      Example Paper Title Two. <span class="authors">First Author, Second Author</span>. <em>Venue</em>, 2023.
+    </li>
+    <li>
+      Example Workshop/Poster. <span class="authors">First Author, Second Author</span>. <em>Workshop</em>, 2022.
+    </li>
+  </ol>
 </div>

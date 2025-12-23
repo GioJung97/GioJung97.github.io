@@ -3,6 +3,7 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
       <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+        <img class="navbar-brand-image" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Profile photo" />
         {% if site.title == 'blank' %}
           {% if site.first_name %}
             <span class="font-weight-bold">
@@ -69,6 +70,7 @@
                     id="navbarDropdown"
                     role="button"
                     data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
