@@ -14,7 +14,5 @@ nav_order: 2
 {% include bib_search.liquid %}
 
 <div class="publications">
-
-{% bibliography %}
-
+  <!-- Publications list disabled for GitHub Pages compatibility (jekyll-scholar tag not supported). -->
 </div>
