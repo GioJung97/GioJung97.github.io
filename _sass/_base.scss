@@ -383,6 +383,14 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Force navbar brand thumbnail to stay small and aligned.
+.navbar-brand-image {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 // Normalize bold styles across headings and emphasis.
 h1,
 h2,
