@@ -193,8 +193,8 @@ exclude:
   - readme_preview/
   - vendor
   # Disabled demo posts that require unsupported GitHub Pages plugins/tags.
-  # - _posts/2018-12-22-distill.md
-  # - _posts/2020-09-28-twitter.md
+  - _posts/2018-12-22-distill.md
+  - _posts/2020-09-28-twitter.md
   - _posts/2023-07-04-jupyter-notebook.md
   - _posts/2024-05-01-tabs.md
 keep_files:
