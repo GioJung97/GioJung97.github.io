@@ -1,6 +1,5 @@
 # Social links shown on the About page (order matters).
-cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
-email: you@example.com # your email address
-github_username: your-github # your GitHub user name
 linkedin_username: your-linkedin # your LinkedIn user name
+github_username: your-github # your GitHub user name
+email: you@example.com # your email address
 scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
