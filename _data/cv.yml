@@ -1,38 +1,39 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+# - title: General Information
+#   type: map
+#   contents:
+#     - name: Full Name
+#       value: Gio Jung
+#     - name: Date of Birth
+#       value: 14th March 1879
+#     - name: Languages
+#       value: English, German
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Mater of Science in Computer Science
+      institution: San Francisco State University
+      year: 2024 - 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Thesis: "Evaluation of Vision Language Models using Item Response Theory"
+        # - Description 2.
+        # - title: Description 3.
+        #   contents:
+        #     - Sub-description 1.
+        #     - Sub-description 2.
+    - title: Bachelor of Arts in Mathematics
+      institution: San Francisco State University
+      year: 2016 - 2023
       description:
-        - Description 1.
-        - Description 2.
+        - Minor in Computer Science
+      #   - Description 2.
 
 - title: Experience
   type: time_table
   contents:
     - title: Professor of Theoretical Physics
       institution: Institute for Advanced Study, Princeton University
+      department: School of Natural Sciences <-- testing
       year: 1933 - 1955
       description:
         - Description 1.
