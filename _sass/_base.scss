@@ -468,6 +468,8 @@ b,
   .contact-icons {
     font-size: 2rem;
     margin-bottom: 1rem;
+    display: flex;
+    gap: 12px;
 
     a {
       img {
