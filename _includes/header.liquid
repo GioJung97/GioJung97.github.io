@@ -88,6 +88,9 @@
                         >
                           {{- child.title -}}
                         </a>
+                        {% unless forloop.last %}
+                          <div class="dropdown-divider"></div>
+                        {% endunless %}
                       {% endif %}
                     {% endfor %}
                   </div>
