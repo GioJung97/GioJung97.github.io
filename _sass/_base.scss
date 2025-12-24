@@ -28,6 +28,7 @@ table {
   th {
     font-size: 1rem;
     padding: 1px 1rem 1px 0;
+    color: var(--global-text-color);
   }
 
   th {
@@ -465,7 +466,8 @@ b,
   // text-align: center;
 
   .contact-icons {
-    font-size: 1.4rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 
     a {
       img {
