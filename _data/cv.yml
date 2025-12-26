@@ -65,13 +65,13 @@
       year: 2025
       description:
         - NeurIPS 2025 Poster Presentation
-        - 'Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, **Gio Jung**,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon'
+        - 'Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, <strong>Gio Jung</strong>,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon'
         # Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, Gio Jung,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon. 2025. ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description. NeurIPS 2025. Poster Presentation, December 2025
     - title: <a herf="https://drive.google.com/file/d/1B2hbqAiHKpWgwQDh_sW-kZO6IcyxV2XH/view"><em>GPT-4o vs. Humans in Rating Image Descriptions</a></em>
       year: 2024
       description:
         - GMiS CAHSI Research Poster Competition
-        - 'Authors: **Gio Jung**, Ilmi Yoon'
+        - 'Authors: <strong>Gio Jung</strong>, Ilmi Yoon'
 
 # - title: Research / Publications
 #   type: time_table
