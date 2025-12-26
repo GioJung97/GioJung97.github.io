@@ -61,9 +61,17 @@
 - title: Poster Presentations
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description
+      year: 2025
+      desscription:
+        - NeurIPS 2025 Poster Presentation
+        - 'Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, **Gio Jung**,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon'
+        # Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, Gio Jung,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon. 2025. ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description. NeurIPS 2025. Poster Presentation, December 2025
+    - title: <a herf="https://drive.google.com/file/d/1B2hbqAiHKpWgwQDh_sW-kZO6IcyxV2XH/view">GPT-4o vs. Humans in Rating Image Descriptions</a>
+      year: 2024
+      description:
+        - GMiS CAHSI Research Poster Competition
+        - 'Authors: **Gio Jung**, Ilmi Yoon'
 
 # - title: Research / Publications
 #   type: time_table
