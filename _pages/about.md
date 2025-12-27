@@ -28,8 +28,8 @@ last_updated: "December 26th, 2025"
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. You can put a picture in, too. Replace `placeholder.png` in `assets/img/` with your own photo.
+I am a Computer Science graduate student at San Francisco State University with broad interests in Artificial Intelligence (AI), Large Language Model (LLM), and human-centered technology. My work is driven by curiosity about how intelligent systems interact with people, and how their behavior can be understood, evaluated, and improved in meaningful ways.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`.
+I am particularly interested in questions of reliability, interpretation, and trust in AI systems, especially in contexts where technology directly affects human experience. Through both research and applied projects, I explore how technical design choices shape real-world outcomes.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I value thoughtful problem-solving, clear reasoning, and responsible innovation, and aims to contribute to AI systems that are not only effective, but also understandable and socially grounded.
