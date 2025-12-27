@@ -528,6 +528,12 @@ b,
   margin-top: 24px;
 }
 
+.about-last-updated {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
 .wechat-modal > img {
   display: block;
   position: relative;
@@ -1559,4 +1565,3 @@ mjx-container[jax="CHTML"][display="true"] {
 .publications ol li {
   margin-bottom: 1.6em;
 }
-
