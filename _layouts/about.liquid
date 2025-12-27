@@ -54,6 +54,7 @@ layout: default
           <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
         </h2>
         {% include news.liquid limit=true %}
+        <p class="about-last-updated">Last updated: {{ site.time | date: "%B %d, %Y" }}</p>
       </div>
     {% endif %}
 
