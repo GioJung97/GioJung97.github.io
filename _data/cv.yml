@@ -2,96 +2,115 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Gio Jung
+    # - name: Date of Birth
+    #   value: 14th March 1879
     - name: Languages
-      value: English, German
+      value: English, Korean
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Mater of Science in Computer Science
+      institution: San Francisco State University
+      year: 2024 - 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - 'Thesis: "Evaluation of Vision Language Models using Item Response Theory"'
+        # - Description 2.
+        # - title: Description 3.
+        #   contents:
+        #     - Sub-description 1.
+        #     - Sub-description 2.
+    - title: Bachelor of Arts in Mathematics
+      institution: San Francisco State University
+      year: 2016 - 2023
       description:
-        - Description 1.
-        - Description 2.
+        - Minor in Computer Science
+      #   - Description 2.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+    - title: Graduate Researcher
+      institution: YouDescribe
+      # department: School of Natural Sciences <-- testing
+      year: 2024 - current
+      # description:
+      #   - Description 1.
+      #   - Description 2.
+      #   - title: Description 3.
+      #     contents:
+      #       - Sub-description 1.
+      #       - Sub-description 2.
+    - title: Tutor
+      institution: TASC, San Francisco State University
+      year: 2023 - 2025
+      # description:
+      #   - Description 1.
+      #   - Description 2.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
+    - title: Software Engineer Intern
+      company: Astro Information Security
+      year: 2025
 
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
+    - title: Teaching Assistant
+      institution: Department of Mathematics, San Francisco State University
+      year: 2023 - 2025
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Poster Presentations
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: '<em>ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description</em>'
+      year: 2025
+      description:
+        - NeurIPS 2025 Poster Presentation
+        - 'Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, <strong>Gio Jung</strong>,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon'
+        # Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, Gio Jung,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon. 2025. ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description. NeurIPS 2025. Poster Presentation, December 2025
+    - title: <a herf="https://drive.google.com/file/d/1B2hbqAiHKpWgwQDh_sW-kZO6IcyxV2XH/view"><em>GPT-4o vs. Humans in Rating Image Descriptions</a></em>
+      year: 2024
+      description:
+        - GMiS CAHSI Research Poster Competition
+        - 'Authors: <strong>Gio Jung</strong>, Ilmi Yoon'
 
-- title: Honors and Awards
+# - title: Research / Publications
+#   type: time_table
+#   contents:
+#     - title: Publication Title 1
+#       year: 2025
+#       description:
+#         - Author 1, Author 2, Author 3. "Title of the Paper." <em>Journal Name</em>, vol. X, no. Y, pp. Z-ZZ, Year.
+#     - title: Publication Title 2
+#       year: 2024
+#       description:
+#         - Author A, Author B. "Another Paper Title." <em>Conference Name</em>, Year.
+
+- title: Honors / Awards / Grants
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - National Science Foundation (NSF), 3K
+    - year: 2024
       items:
-        - Max Planck Medal
+        - NAIRR Pilot Resource
+        - Google CAHSI IRP Grant
+    - year: 2017
+      items:
+        - Jessie F. L. York Scholarship, 1K
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Topic 1.
+#       items:
+#         - Description 1.
+#         - Description 2.
+#     - title: Topic 2.
+#       items:
+#         - Description 1.
+#         - Description 2.
 
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+# - title: Other Interests
+#   type: list
+#   contents:
+#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.

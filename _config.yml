@@ -4,10 +4,10 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Gio
-# middle_name: R.
+# middle_name:
 last_name: Jung
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+# contact_note: >
+#   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -48,7 +48,7 @@ repo_trophies:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -212,7 +212,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-tabs
   - jekyll-terser
-  - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
 
@@ -631,11 +630,12 @@ jekyll_get_json:
 
 jsonresume:
   - basics
-  - work
   - education
   - publications
+  - poster_presentations
   - projects
   - volunteer
+  - work
   - awards
   - certificates
   - skills

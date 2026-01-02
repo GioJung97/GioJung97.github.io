@@ -299,6 +299,14 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-brand {
     color: var(--global-text-color);
+
+    .nav-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+    }
   }
 
   .navbar-nav .nav-item .nav-link {
@@ -453,6 +461,27 @@ ul.task-list input[type="checkbox"] {
   .contact-note {
     font-size: 0.8rem;
   }
+}
+
+.social.social-left {
+  text-align: left;
+
+  .contact-icons {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    a {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.news-heading {
+  margin-top: 2rem;
+}
+
+.publications ol li {
+  margin-bottom: 1.5rem;
 }
 
 .wechat-modal {
