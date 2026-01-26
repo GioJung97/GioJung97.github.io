@@ -23,23 +23,23 @@ The application is publicly accessible at: <a href="https://chillmate-react.verc
 
 - **AI Chatbot (RAG-based):**  
   A conversational assistant designed to provide campus-aware guidance using SFSU-specific knowledge.
-  <img src="{{ '/assets/img/gio_images/projects/chillmate/chatbot_page.png' | relative_url }}" alt="ChillMate chatbot" style="max-width: 500px; height: auto; display: block; margin-top: 0.5rem;" />
+  <img src="{{ '/assets/img/gio_images/projects/chillmate/chatbot_page.png' | relative_url }}" alt="ChillMate chatbot" class="feature-thumb" />
 
 - **Journal:**  
   A private space for users to write reflections and track emotional patterns.
-  <img src="{{ '/assets/img/gio_images/projects/chillmate/journal_page.png' | relative_url }}" alt="ChillMate journal" style="max-width: 500px; height: auto; display: block; margin-top: 0.5rem;" />
+  <img src="{{ '/assets/img/gio_images/projects/chillmate/journal_page.png' | relative_url }}" alt="ChillMate journal" class="feature-thumb" />
 
 - **Profile:**  
   A personal dashboard that summarizes user details and includes a mood tracker.
-  <img src="{{ '/assets/img/gio_images/projects/chillmate/profile_page.png' | relative_url }}" alt="ChillMate profile" style="max-width: 500px; height: auto; display: block; margin-top: 0.5rem;" />
+  <img src="{{ '/assets/img/gio_images/projects/chillmate/profile_page.png' | relative_url }}" alt="ChillMate profile" class="feature-thumb" />
 
 - **Forum:**  
   A community space for sharing experiences and peer support.
-  <img src="{{ '/assets/img/gio_images/projects/chillmate/forum_page.png' | relative_url }}" alt="ChillMate forum" style="max-width: 500px; height: auto; display: block; margin-top: 0.5rem;" />
+  <img src="{{ '/assets/img/gio_images/projects/chillmate/forum_page.png' | relative_url }}" alt="ChillMate forum" class="feature-thumb" />
 
 - **Resources:**  
   Curated wellness and mindfulness content relevant to students.
-  <img src="{{ '/assets/img/gio_images/projects/chillmate/resources_page.png' | relative_url }}" alt="ChillMate resources" style="max-width: 500px; height: auto; display: block; margin-top: 0.5rem;" />
+  <img src="{{ '/assets/img/gio_images/projects/chillmate/resources_page.png' | relative_url }}" alt="ChillMate resources" class="feature-thumb" />
 
 ---
 

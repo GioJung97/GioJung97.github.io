@@ -749,6 +749,21 @@ footer.sticky-bottom {
   }
 }
 
+// ChillMate feature images
+.feature-thumb {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .feature-thumb {
+    max-width: 100%;
+  }
+}
+
 // Thesis PDF embed
 .pdf-embed {
   width: 100%;
