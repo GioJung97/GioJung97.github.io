@@ -3,7 +3,7 @@ layout: page
 title: eBay 2025 University Machine Learning Competition
 description: 'Top 4: "Init to Win it"'
 img: assets/img/gio_images/projects/ebay_challenge/ebay_challenge_thumbnail.png
-order: 99
+order: 2
 ---
 
 ## Overview
