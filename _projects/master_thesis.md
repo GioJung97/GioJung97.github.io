@@ -21,12 +21,13 @@ This thesis contributes a generalizable framework for evaluating AI models as hu
 
 ## Thesis
 
-<iframe
-  src="{{ '/assets/pdf/thesis_report.pdf' | relative_url }}#toolbar=1&navpanes=0&scrollbar=1"
-  title="Master's Thesis PDF"
-  loading="lazy"
-  style="width: 100%; height: 80vh; border: 0;"
-></iframe>
+<div class="pdf-embed">
+  <iframe
+    src="{{ '/assets/pdf/thesis_report.pdf' | relative_url }}#toolbar=1&navpanes=0&scrollbar=1"
+    title="Master's Thesis PDF"
+    loading="lazy"
+  ></iframe>
+</div>
 
 If the PDF does not render, you can check it directly:
 <a href="{{ '/assets/pdf/thesis_report.pdf' | relative_url }}">thesis.pdf</a>
