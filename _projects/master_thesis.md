@@ -2,7 +2,7 @@
 layout: page
 title: Master's Thesis
 description: 'Title: "Evaluation of Vision Language Models using Item Response Theory"'
-img: assets/img/gio_images/thesis/research-diagram.png
+img: assets/img/gio_images/projects/thesis/research-diagram.png
 order: 100
 ---
 
