@@ -75,12 +75,7 @@ ninja.data = [{
           section: "News",},{id: "news-officially-graduated-from-sfsu-with-a-master-s-degree-in-computer-science",
           title: 'Officially graduated from SFSU with a Master’s degree in Computer Science!',
           description: "",
-          section: "News",},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
+          section: "News",},{id: "projects-project-3-with-very-long-name",
           title: 'project 3 with very long name',
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
@@ -115,6 +110,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-ebay-2025-university-machine-learning-competition",
+          title: 'eBay 2025 University Machine Learning Competition',
+          description: "Top 4: &quot;Init to Win it&quot;",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ebay_challenge/";
             },},{id: "projects-master-39-s-thesis",
           title: 'Master&amp;#39;s Thesis',
           description: "Title: &quot;Evaluation of Vision Language Models using Item Response Theory&quot;",
