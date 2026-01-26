@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "Projects page under construction.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -75,12 +75,7 @@ ninja.data = [{
           section: "News",},{id: "news-officially-graduated-from-sfsu-with-a-master-s-degree-in-computer-science",
           title: 'Officially graduated from SFSU with a Master’s degree in Computer Science!',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
+          section: "News",},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
@@ -120,6 +115,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-master-39-s-thesis",
+          title: 'Master&amp;#39;s Thesis',
+          description: "Title: &quot;Evaluation of Vision Language Models using Item Response Theory&quot;",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/master_thesis/";
             },},{
         id: 'social-cv',
         title: 'CV',
