@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Computer Science graduate student at San Francisco State University with broad interests in Artificial Intelligence (AI), Large Language Model (LLM), and human-centered technology. My work is driven by curiosity about how intelligent systems interact with people, and how their behavior can be understood, evaluated, and improved in meaningful ways.
+I am a Computer Science graduate student at San Francisco State University with broad interests in Artificial Intelligence (AI), Machine Learning (ML), Large Language Models (LLMs), and human-centered technology. My work focuses on building and evaluating intelligent systems, with experience developing machine learning models and AI-driven applications that connect research ideas with practical, real-world use. I am particularly interested in how learning-based systems can be designed, trained, and improved through careful evaluation and iteration.
 
-I am particularly interested in questions of reliability, interpretation, and trust in AI systems, especially in contexts where technology directly affects human experience. Through both research and applied projects, I explore how technical design choices shape real-world outcomes.
+I am equally interested in questions of reliability, interpretation, and trust in AI systems, especially in contexts where technology directly affects human experience. Through both research and applied projects, I explore how technical design choices, model behavior, and evaluation methods shape real-world outcomes and user trust.
 
-I value thoughtful problem-solving, clear reasoning, and responsible innovation, and aims to contribute to AI systems that are not only effective, but also understandable and socially grounded.
+I value thoughtful problem-solving, clear reasoning, and responsible innovation, and aim to contribute to AI systems that are not only effective and technically sound, but also understandable and socially grounded.
