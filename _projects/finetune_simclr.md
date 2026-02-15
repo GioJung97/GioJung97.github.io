@@ -6,12 +6,7 @@ description: Self-supervised learning meets multi-object classification with Sim
 order: 3
 ---
 
-# Fine-tuning SimCLR for Multi-Object Classification on COCO-Annotated Firefighting Device Detection
-
-<!-- PROJECT BANNER -->
-<!-- ![Project Banner](placeholder: a wide banner image showing a sample scene image with bounding boxes drawn around firefighting devices, each labeled with the predicted class name) -->
-
----
+<img src="{{ '/assets/img/gio_images/projects/simclr/data_sample.jpg' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
 
 ## Table of Contents
 
