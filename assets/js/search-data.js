@@ -85,6 +85,11 @@ ninja.data = [{
           description: "Top 4: &quot;Init to Win it&quot;",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ebay_challenge/";
+            },},{id: "projects-fine-tuning-simclr-for-firefighting-device-classification",
+          title: 'Fine-tuning SimCLR for Firefighting Device Classification',
+          description: "Self-supervised learning meets multi-object classification with SimCLR on COCO-annotated data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/finetune_simclr/";
             },},{id: "projects-master-39-s-thesis",
           title: 'Master&amp;#39;s Thesis',
           description: "Title: &quot;Evaluation of Vision Language Models using Item Response Theory&quot;",
