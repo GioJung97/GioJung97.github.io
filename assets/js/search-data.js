@@ -95,6 +95,11 @@ ninja.data = [{
           description: "Title: &quot;Evaluation of Vision Language Models using Item Response Theory&quot;",
           section: "Projects",handler: () => {
               window.location.href = "/projects/master_thesis/";
+            },},{id: "projects-spacetimegpt",
+          title: 'SpaceTimeGPT',
+          description: "Video Captioning with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/spacetimegpt/";
             },},{
         id: 'social-cv',
         title: 'CV',
