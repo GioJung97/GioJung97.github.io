@@ -2,15 +2,16 @@
 layout: page
 title: SpaceTimeGPT
 description: Video Captioning with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism
-# img: assets/img/gio_images/projects/chillmate/chillmate_thumbnail.png
+img: assets/img/gio_images/projects/spacetimegpt/spacetimegpt_architecture_diagram.png
 order: 4
 ---
 
 <!-- TODO LIST -->
-<!-- Make Thumbnail Image -->
-<!-- Make architecture diagram -->
 <!-- Put the result visualization (qualitative) -->
 <!-- Maybe put the reuslt of cider score? -->
+<!-- Put github link -->
+
+<img src="{{ '/assets/img/gio_images/projects/spacetimegpt/spacetimegpt_architecture_diagram.png' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
 
 ## Overview
 
@@ -18,7 +19,7 @@ TimesGPT is a distributed video captioning system that pairs a **TimeSformer** v
 
 To train and evaluate models at scale, the entire encoder-decoder stack is split across multiple GPUs using **DeepSpeed's Pipeline Parallelism**, allowing configurations that would not fit in a single GPU's memory to be trained efficiently across multi-node HPC clusters.
 
-
+*The code is in progress to make publically available.*
 
 
 
@@ -338,7 +339,9 @@ After evaluation, the system generates an **HTML report** containing side-by-sid
 - The model's predicted caption.
 - All ground-truth reference captions.
 
-This makes it easy to visually inspect where the model succeeds or fails.
+<img src="{{ '/assets/img/gio_images/projects/spacetimegpt/qualitative_result1.png' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
+
+<img src="{{ '/assets/img/gio_images/projects/spacetimegpt/qualitative_result2.png' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
 
 
 
