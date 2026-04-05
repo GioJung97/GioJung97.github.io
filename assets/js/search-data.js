@@ -75,6 +75,9 @@ ninja.data = [{
           section: "News",},{id: "news-officially-graduated-from-sfsu-with-a-master-s-degree-in-computer-science",
           title: 'Officially graduated from SFSU with a Master’s degree in Computer Science!',
           description: "",
+          section: "News",},{id: "news-the-paper-using-item-response-theory-to-disentangle-local-vs-global-is-officially-published-at-the-journal-of-discourse-processes",
+          title: 'The paper “Using Item-Response Theory to Disentangle Local vs. Global …” is officially...',
+          description: "",
           section: "News",},{id: "projects-chillmate",
           title: 'ChillMate',
           description: "Stress Management App for SFSU",
@@ -97,7 +100,7 @@ ninja.data = [{
               window.location.href = "/projects/master_thesis/";
             },},{id: "projects-spacetimegpt",
           title: 'SpaceTimeGPT',
-          description: "Video Captioning with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism",
+          description: "Video Captioning Model with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism",
           section: "Projects",handler: () => {
               window.location.href = "/projects/spacetimegpt/";
             },},{
