@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SpaceTimeGPT
-description: Video Captioning with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism
+description: Video Captioning Model with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism
 img: assets/img/gio_images/projects/spacetimegpt/spacetimegpt_architecture_diagram.png
 order: 4
 ---

@@ -24,13 +24,13 @@ nav_order: 1
     <li>
       <div><em>How well can VLMs rate audio descriptions: A multi-dimensional quantitative assessment framework</em></div>
       <div><strong>Authors:</strong> Lana Do, <strong>Gio Jung</strong>, Juvenal Francisco Barajas, Andrew Scott, Shasta Ihorn, Vassilis Athitsos, Alexander Mario Blum, Ilmi Yoon</div>
-      <div><strong>Venue:</strong> Under revision at CHI, 2026</div>
+      <div><strong>Venue:</strong> Manuscript for CHI, 2026</div>
     </li>
 
     <li>
       <div><em>Evaluation of Vision Language Models with Item Response Theory</em></div>
       <div><strong>Authors:</strong> Andrew Scott, <strong>Gio Jung</strong>, Alexander Mario Blum, Juvenal Francisco Barajas, Manali Seth, Shasta Ihorn, Vassilis Athitsos, Ilmi Yoon</div>
-      <div><strong>Venue:</strong> Manuscript, 2026</div>
+      <div><strong>Venue:</strong> Manuscript for AAAI, 2026</div>
     </li>
   </ol>
 </div>
