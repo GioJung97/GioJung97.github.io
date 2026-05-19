@@ -3,7 +3,7 @@ layout: page
 title: Fine-tuning SimCLR for Firefighting Device Classification
 description: Self-supervised learning meets multi-object classification with SimCLR on COCO-annotated data
 # img: assets/img/gio_images/projects/simclr/simclr_thumbnail.png
-order: 3
+order: 4
 ---
 
 <img src="{{ '/assets/img/gio_images/projects/simclr/data_sample.jpg' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>

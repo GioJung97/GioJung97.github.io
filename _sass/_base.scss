@@ -784,7 +784,8 @@ footer.sticky-bottom {
 
 // Publications
 
-.publications {
+.publications,
+.manuscripts {
   margin-top: 2rem;
 
   h1 {
@@ -957,6 +958,48 @@ footer.sticky-bottom {
     }
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
+    }
+  }
+}
+
+// Snapshots
+
+.snapshots {
+  .snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .snapshot-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--global-card-bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .snapshot-caption {
+      padding: 1rem 1.2rem;
+
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--global-text-color);
+        line-height: 1.5;
+      }
     }
   }
 }
