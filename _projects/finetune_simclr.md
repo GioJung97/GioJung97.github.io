@@ -42,7 +42,7 @@ The pipeline is end-to-end:
 
 ## What is SimCLR?
 
-**SimCLR** (Simple Framework for Contrastive Learning of Visual Representations) is a self-supervised learning framework developed by Google Research. The core idea is to learn powerful visual representations *without labels* by training the model to recognize that two augmented views of the same image are more similar to each other than to views from different images.
+**SimCLR** (Simple Framework for Contrastive Learning of Visual Representations) is a self-supervised learning framework developed by Google Research. The core idea is to learn powerful visual representations _without labels_ by training the model to recognize that two augmented views of the same image are more similar to each other than to views from different images.
 
 <!-- ![SimCLR Framework Diagram](placeholder: the SimCLR framework diagram from the original paper showing two augmented views of the same image passing through a shared encoder and projection head, with the NT-Xent contrastive loss pulling positive pairs together and pushing negative pairs apart) -->
 
@@ -67,12 +67,12 @@ The result is an encoder that produces rich, transferable feature representation
 
 This project uses the **Firefighting Device Detection** dataset sourced from [Roboflow Universe](https://universe.roboflow.com/yaid-pzikt/firefighting-device-detection), annotated in **COCO format**.
 
-| Split | Images | Object Annotations |
-|-------|-------:|-------------------:|
-| Train |    102 |              2,606 |
-| Valid |     28 |                755 |
-| Test  |     18 |                424 |
-| **Total** | **148** | **3,785** |
+| Split     |  Images | Object Annotations |
+| --------- | ------: | -----------------: |
+| Train     |     102 |              2,606 |
+| Valid     |      28 |                755 |
+| Test      |      18 |                424 |
+| **Total** | **148** |          **3,785** |
 
 Each image contains multiple firefighting devices. The dataset covers **42 object categories**, including:
 
@@ -94,9 +94,9 @@ Since SimCLR is an image-level representation learner (not a detector), we conve
 
 {% highlight python %}
 class CocoObjectCropClassification(Dataset):
-    def __getitem__(self, idx):
-        s = self.samples[idx]
-        image = Image.open(os.path.join(self.images_dir, s["file_name"])).convert("RGB")
+def **getitem**(self, idx):
+s = self.samples[idx]
+image = Image.open(os.path.join(self.images_dir, s["file_name"])).convert("RGB")
 
         x, y, w, h = s["bbox"]
         crop = image.crop((int(x), int(y), int(x + w), int(y + h)))
@@ -105,16 +105,17 @@ class CocoObjectCropClassification(Dataset):
             crop = self.transform(crop)
 
         return crop, s["label"]
+
 {% endhighlight %}
 
 Each COCO annotation becomes one `(crop, label)` sample. Bounding boxes are clamped to image boundaries for robustness. A consistent `category_id -> class_index` mapping is built from the **training split only** and reused across validation, test, and inference to prevent label mismatch.
 
 **Transforms applied:**
 
-| Stage | Transforms |
-|-------|-----------|
-| Train | `Resize(224)` &rarr; `RandomHorizontalFlip` &rarr; `ToTensor` |
-| Val / Test | `Resize(224)` &rarr; `ToTensor` |
+| Stage      | Transforms                                                    |
+| ---------- | ------------------------------------------------------------- |
+| Train      | `Resize(224)` &rarr; `RandomHorizontalFlip` &rarr; `ToTensor` |
+| Val / Test | `Resize(224)` &rarr; `ToTensor`                               |
 
 ---
 
@@ -145,16 +146,16 @@ The SimCLR pre-trained checkpoint (`checkpoint_100.tar`) is loaded into the enco
 
 ### Fine-tuning Procedure
 
-| Hyperparameter | Value |
-|----------------|-------|
+| Hyperparameter       | Value                                                  |
+| -------------------- | ------------------------------------------------------ |
 | Pre-trained Backbone | SimCLR ResNet-50 (100 epochs contrastive pre-training) |
-| Projection Dimension | 64 |
-| Optimizer | Adam |
-| Learning Rate | 1e-4 |
-| Loss Function | Cross-Entropy |
-| Batch Size | 32 |
-| Epochs | 20 |
-| Input Resolution | 224 x 224 |
+| Projection Dimension | 64                                                     |
+| Optimizer            | Adam                                                   |
+| Learning Rate        | 1e-4                                                   |
+| Loss Function        | Cross-Entropy                                          |
+| Batch Size           | 32                                                     |
+| Epochs               | 20                                                     |
+| Input Resolution     | 224 x 224                                              |
 
 The fine-tuning loop is straightforward supervised training:
 
@@ -196,11 +197,11 @@ The model converges quickly, demonstrating that SimCLR's pre-trained representat
 <img src="{{ '/assets/img/gio_images/projects/simclr/train_curve.png' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
 
 | Epoch | Train Loss | Train Acc | Val Loss | Val Acc |
-|------:|-----------:|----------:|---------:|--------:|
-| 0     | 1.4073     | 67.84%    | 0.5091   | 86.09%  |
-| 5     | 0.0354     | 99.39%    | 0.0272   | 99.60%  |
-| 11    | 0.0040     | 100.00%   | 0.0234   | 99.74%  |
-| 19    | 0.0152     | 99.46%    | 0.0328   | 99.47%  |
+| ----: | ---------: | --------: | -------: | ------: |
+|     0 |     1.4073 |    67.84% |   0.5091 |  86.09% |
+|     5 |     0.0354 |    99.39% |   0.0272 |  99.60% |
+|    11 |     0.0040 |   100.00% |   0.0234 |  99.74% |
+|    19 |     0.0152 |    99.46% |   0.0328 |  99.47% |
 
 ---
 
@@ -208,13 +209,13 @@ The model converges quickly, demonstrating that SimCLR's pre-trained representat
 
 On the held-out **test set** (18 images, 424 object crops):
 
-| Metric | Score |
-|--------|------:|
+| Metric             |      Score |
+| ------------------ | ---------: |
 | **Top-1 Accuracy** | **98.35%** |
 | **Top-5 Accuracy** | **99.29%** |
-| Weighted Precision | 98.95% |
-| Weighted Recall | 98.35% |
-| Weighted F1-Score | 98.50% |
+| Weighted Precision |     98.95% |
+| Weighted Recall    |     98.35% |
+| Weighted F1-Score  |     98.50% |
 
 The model achieves near-perfect classification on most of the 42 categories, with only a handful of misclassifications on rare classes with very few test samples.
 
@@ -261,7 +262,7 @@ Open and run `inferencing.ipynb` end-to-end. This will:
 
 ## References
 
-- **SimCLR Paper**: Chen, T., Kornblith, S., Norouzi, M., & Hinton, G. (2020). *A Simple Framework for Contrastive Learning of Visual Representations*. ICML 2020. [[arXiv:2002.05709]](https://arxiv.org/abs/2002.05709)
+- **SimCLR Paper**: Chen, T., Kornblith, S., Norouzi, M., & Hinton, G. (2020). _A Simple Framework for Contrastive Learning of Visual Representations_. ICML 2020. [[arXiv:2002.05709]](https://arxiv.org/abs/2002.05709)
 - **SimCLR Original Repo (TensorFlow)**: [google-research/simclr](https://github.com/google-research/simclr)
 - **PyTorch SimCLR Implementation**: [sthalles/SimCLR](https://github.com/sthalles/SimCLR)
 - **Dataset**: [Firefighting Device Detection](https://universe.roboflow.com/yaid-pzikt/firefighting-device-detection) on Roboflow Universe (License: BY-NC-SA 4.0)

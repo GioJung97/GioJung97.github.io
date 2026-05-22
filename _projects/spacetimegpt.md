@@ -19,14 +19,11 @@ TimesGPT is a distributed video captioning system that pairs a **TimeSformer** v
 
 To train and evaluate models at scale, the entire encoder-decoder stack is split across multiple GPUs using **DeepSpeed's Pipeline Parallelism**, allowing configurations that would not fit in a single GPU's memory to be trained efficiently across multi-node HPC clusters.
 
-*The code is in progress to make publically available.*
-
-
+_The code is in progress to make publically available._
 
 ---
 
 ## Team & Contributions
-
 
 | Name                          | Role                                                                                                                        |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -61,7 +58,6 @@ The codebase supports both environments: `sbatch_scripts/ref_run_h100_2nodes_16g
 
 ## Tech Stack
 
-
 | Layer                   | Technology                                                                                    |
 | ----------------------- | --------------------------------------------------------------------------------------------- |
 | Deep Learning Framework | PyTorch                                                                                       |
@@ -72,8 +68,7 @@ The codebase supports both environments: `sbatch_scripts/ref_run_h100_2nodes_16g
 | Evaluation Metrics      | pycocoevalcap (BLEU, METEOR, ROUGE, CIDEr, CIDEr-D, SPICE)                                    |
 | Dataset Format          | Pre-processed `.npz` archives (pixel tensors + tokenized captions)                            |
 | Precision               | FP16 mixed-precision training                                                                 |
-| HPC Orchestration       | SLURM (`sbatch` / `srun`) on PSC H100 nodes; `torchrun` standalone on local server |
-
+| HPC Orchestration       | SLURM (`sbatch` / `srun`) on PSC H100 nodes; `torchrun` standalone on local server            |
 
 ---
 
@@ -94,10 +89,6 @@ Key characteristics of the encoder:
 
 The encoder produces a sequence of hidden states (one per patch-token across all frames) that serve as the visual context for the decoder.
 
-
-
-
-
 ### Decoder: GPT-2
 
 [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) is used as the autoregressive language model that generates captions token-by-token. The standard GPT-2 architecture is extended with **cross-attention layers** so that each decoder block can attend to the encoder's visual output.
@@ -117,10 +108,6 @@ HuggingFace's `VisionEncoderDecoderModel` provides the glue between TimeSformer 
 - Passing encoder hidden states to the decoder's cross-attention layers.
 - The shift-right mechanism that prepends a BOS token to decoder inputs during training.
 - Tied word embeddings between the decoder's input embedding layer and the output LM head (reducing parameter count and improving training stability).
-
-
-
-
 
 ---
 
@@ -204,14 +191,9 @@ Stage 0 (GPU 0)            Stage 1 (GPU 1)           Stage 2 (GPU 2)
 </pre>
 </div>
 
-
-
-
-
 Each wrapper layer carries three values through the pipeline as a tuple: `(encoder_hidden_states, decoder_input_or_labels, metadata_tensor)`. This tuple protocol is critical because DeepSpeed's pipeline engine only passes a single tensor (or tuple of tensors) between stages -- there is no concept of keyword arguments or named outputs.
 
 The pipeline wrappers include:
-
 
 | Wrapper                | Role                                                                                                                                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -236,10 +218,6 @@ DeepSpeed offers multiple methods for deciding which layers go to which GPU:
 - `**type:transformers**` -- Groups by module type.
 
 The `parameters` method is the default, as it tends to balance memory consumption most effectively when encoder and decoder blocks have different parameter counts.
-
-
-
-
 
 ---
 
@@ -270,7 +248,6 @@ Training uses DeepSpeed's `PipelineEngine.train_batch()`, which orchestrates mic
 
 Checkpoints are saved at every epoch and support both standard and **universal checkpoint** formats. Universal checkpoints allow resuming training on a different number of GPUs than originally used (e.g., training on 16 GPUs, then resuming on 8) -- particularly useful when transitioning between the local server and NAIRR HPC resources.
 
-
 ### Decoding Strategies
 
 At inference time, captions are generated autoregressively. Because the model is distributed across pipeline stages, decoding requires coordination:
@@ -280,16 +257,11 @@ At inference time, captions are generated autoregressively. Because the model is
 
 Both strategies handle early stopping when all sequences in the batch have produced an EOS token.
 
-
-
-
-
 ---
 
 ## Evaluation Metrics
 
 Generated captions are evaluated against multiple ground-truth references (up to 10 per video) using standard captioning metrics:
-
 
 | Metric           | What It Measures                                                        |
 | ---------------- | ----------------------------------------------------------------------- |
@@ -299,7 +271,6 @@ Generated captions are evaluated against multiple ground-truth references (up to
 | **CIDEr**        | TF-IDF weighted n-gram similarity, designed specifically for captioning |
 | **CIDEr-D**      | CIDEr variant with length penalty and stemming                          |
 | **SPICE**        | Semantic propositional content via scene graph parsing                  |
-
 
 All metrics are computed using the `pycocoevalcap` library (from the MS COCO evaluation toolkit) and logged to W&B at the end of each epoch.
 
@@ -325,10 +296,6 @@ Each experiment run is uniquely identified by a structured name encoding all key
 
 Custom metric axes are defined so that loss and captioning metrics can be plotted against the epoch number rather than the global step.
 
-
-
-
-
 ---
 
 ## Qualitative Results
@@ -343,10 +310,6 @@ After evaluation, the system generates an **HTML report** containing side-by-sid
 
 <img src="{{ '/assets/img/gio_images/projects/spacetimegpt/qualitative_result2.png' | relative_url }}" alt="Inference Results" class="img-fluid rounded" style="display: block; margin: auto;"/>
 
-
-
-
-
 ---
 
 ## Deployment Environments
@@ -356,6 +319,7 @@ The codebase is designed to run seamlessly in two different hardware environment
 ### SLURM-Managed HPC (PSC H100 Nodes via NAIRR)
 
 Used for full-scale training runs. SLURM sbatch scripts handle:
+
 - Multi-node orchestration via `srun` + `torchrun`.
 - Automatic master address/port discovery from SLURM environment variables (`SLURM_NODELIST`, `SLURM_JOB_ID`).
 - Configurable GPU count per node and number of nodes.
@@ -365,20 +329,18 @@ Used for full-scale training runs. SLURM sbatch scripts handle:
 Used for development, debugging, and smaller-scale experiments. The `testrun.sh` script launches `torchrun` directly (without `srun` or `sbatch`), targeting specific GPUs via `CUDA_VISIBLE_DEVICES`. Pipeline parallelism still runs across multiple local GPUs -- the DeepSpeed code is identical in both environments.
 
 Example configurations tested:
+
 - **1 GPU (A6000), 1 node** -- Original single-GPU development environment (without parallelism).
 - **3 GPUs, 1 node** -- Local multi-GPU server for pipeline parallelism development and testing.
 - **16 GPUs (8 per node), 2 nodes of NVIDIA H100s** -- Full-scale training on PSC via NAIRR.
 
-
-
 ---
-
 
 ## References
 
-1. Bertasius, G., Wang, H., & Torresani, L. (2021). *Is Space-Time Attention All You Need for Video Understanding?* Proceedings of the International Conference on Machine Learning (ICML). [arXiv:2102.05095](https://arxiv.org/abs/2102.05095)
-2. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). *Language Models are Unsupervised Multitask Learners.* OpenAI Technical Report. [PDF](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
-3. Rasley, J., Rajbhandari, S., Ruwase, O., & He, Y. (2020). *DeepSpeed: System Optimizations Enable Training Deep Learning Models with Over 100 Billion Parameters.* Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. [deepspeed.ai](https://www.deepspeed.ai/)
-4. Wang, X., Wu, J., Chen, J., Li, L., Wang, Y., & Wang, W. Y. (2019). *VaTeX: A Large-Scale, High-Quality Multilingual Dataset for Video-and-Language Research.* Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV). [vatex.org](https://eric-xw.github.io/vatex-website/)
-5. Vedantam, R., Zitnick, C. L., & Parikh, D. (2015). *CIDEr: Consensus-based Image Description Evaluation.* Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
+1. Bertasius, G., Wang, H., & Torresani, L. (2021). _Is Space-Time Attention All You Need for Video Understanding?_ Proceedings of the International Conference on Machine Learning (ICML). [arXiv:2102.05095](https://arxiv.org/abs/2102.05095)
+2. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). _Language Models are Unsupervised Multitask Learners._ OpenAI Technical Report. [PDF](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+3. Rasley, J., Rajbhandari, S., Ruwase, O., & He, Y. (2020). _DeepSpeed: System Optimizations Enable Training Deep Learning Models with Over 100 Billion Parameters._ Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. [deepspeed.ai](https://www.deepspeed.ai/)
+4. Wang, X., Wu, J., Chen, J., Li, L., Wang, Y., & Wang, W. Y. (2019). _VaTeX: A Large-Scale, High-Quality Multilingual Dataset for Video-and-Language Research._ Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV). [vatex.org](https://eric-xw.github.io/vatex-website/)
+5. Vedantam, R., Zitnick, C. L., & Parikh, D. (2015). _CIDEr: Consensus-based Image Description Evaluation._ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 6. NSF National Artificial Intelligence Research Resource (NAIRR) Pilot. [nairrpilot.org](https://nairrpilot.org/)

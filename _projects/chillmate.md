@@ -14,8 +14,7 @@ For full implementation details, documentation, and source code, please visit th
 
 The application is publicly accessible at: <a href="https://chillmate-react.vercel.app/">https://chillmate-react.vercel.app/</a>
 
-
-> *Note: The chatbot feature is currently disabled in the public demo because it requires GPU-based model hosting, which is not available in the deployed environment.*
+> _Note: The chatbot feature is currently disabled in the public demo because it requires GPU-based model hosting, which is not available in the deployed environment._
 
 ---
 
@@ -46,20 +45,23 @@ The application is publicly accessible at: <a href="https://chillmate-react.verc
 ## Tech Stack
 
 ### Frontend
-- React  
-- CSS  
-- Deployed on Vercel  
+
+- React
+- CSS
+- Deployed on Vercel
 
 ### Backend & Data
-- Node.js  
-- MongoDB  
+
+- Node.js
+- MongoDB
 
 ### AI / Chatbot System
-- Open-source language model  
-- Retrieval-Augmented Generation (RAG) pipeline  
-  - Retrieves SFSU-specific documents  
-  - Injects relevant context into the model’s prompt  
-  - Enables domain-grounded, context-aware responses  
+
+- Open-source language model
+- Retrieval-Augmented Generation (RAG) pipeline
+  - Retrieves SFSU-specific documents
+  - Injects relevant context into the model’s prompt
+  - Enables domain-grounded, context-aware responses
 
 ---
 
@@ -68,10 +70,11 @@ The application is publicly accessible at: <a href="https://chillmate-react.verc
 I served as the **Scrum Master** for the team, coordinating sprint planning, stand-ups, and task distribution while ensuring smooth collaboration between frontend and backend development.
 
 In addition to project coordination, I:
-- Contributed to feature integration and frontend–backend alignment  
-- Helped design the chatbot system architecture  
-- Assisted with deployment and debugging  
-- Ensured the system met both functional and user-experience goals  
+
+- Contributed to feature integration and frontend–backend alignment
+- Helped design the chatbot system architecture
+- Assisted with deployment and debugging
+- Ensured the system met both functional and user-experience goals
 
 ---
 
