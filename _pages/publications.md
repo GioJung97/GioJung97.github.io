@@ -1,82 +1,11 @@
 ---
 layout: page
 permalink: /publications/
-title: Publications
+title: Research
 # description: selected publications
 nav: true
-nav_order: 1
+nav_order: 2
 ---
-
-<style>
-  .pub-list {
-    list-style: decimal;
-    padding-left: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .pub-list > li {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--global-divider-color);
-  }
-
-  .pub-list > li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .pub-title {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--global-text-color);
-  }
-
-  .pub-authors {
-    margin-top: 0.35rem;
-    font-size: 0.95rem;
-    color: var(--global-text-color);
-  }
-
-  .pub-authors strong {
-    color: var(--global-theme-color);
-  }
-
-  .pub-venue {
-    margin-top: 0.35rem;
-    font-size: 0.9rem;
-    color: var(--global-text-color-light);
-  }
-
-  .pub-links {
-    margin-top: 0.6rem;
-  }
-
-  .pub-badge {
-    display: inline-block;
-    margin-right: 0.4rem;
-    padding: 0.12rem 0.55rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--global-theme-color);
-    border: 1px solid var(--global-theme-color);
-    border-radius: 1rem;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-
-  .pub-badge:hover {
-    background-color: var(--global-theme-color);
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .pub-section-title {
-    margin-top: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-</style>
 
 <div class="publications">
   <h2 class="pub-section-title">Publications</h2>

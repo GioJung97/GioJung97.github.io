@@ -4,6 +4,12 @@ title: Master's Thesis
 description: 'Title: "Evaluation of Vision Language Models using Item Response Theory"'
 img: assets/img/gio_images/projects/thesis/research-diagram.png
 order: 100
+pinned: true
+selected: true
+tags:
+  - Vision-Language Models
+  - Item Response Theory
+  - Evaluation
 ---
 
 ## Thesis Defense

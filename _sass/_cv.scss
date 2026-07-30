@@ -39,6 +39,22 @@ a.btncv:hover {
 }
 
 /*****************************
+ * CV cards (editorial hairline, matches Work/Research)
+ *****************************/
+
+.cv .card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.cv .card .card-title {
+  font-family: $font-heading;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/*****************************
  * CV TIME_TABLE styles
  *****************************/
 

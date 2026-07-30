@@ -3,59 +3,83 @@
   contents:
     - name: Full Name
       value: Gio Jung
-    # - name: Date of Birth
-    #   value: 14th March 1879
+    - name: Focus
+      value: "Machine Learning Engineer — Multimodal ML Systems & LLM Evaluation"
+    - name: Email
+      value: gio6141@gmail.com
     - name: Languages
       value: English, Korean
 
 - title: Education
   type: time_table
   contents:
-    - title: Mater of Science in Computer Science
+    - title: Master of Science in Computer Science
       institution: San Francisco State University
       year: 2024 - 2025
       description:
         - 'Thesis: "Evaluation of Vision Language Models using Item Response Theory"'
-        # - Description 2.
-        # - title: Description 3.
-        #   contents:
-        #     - Sub-description 1.
-        #     - Sub-description 2.
     - title: Bachelor of Arts in Mathematics
       institution: San Francisco State University
       year: 2016 - 2023
       description:
         - Minor in Computer Science
-      #   - Description 2.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Graduate Researcher
-      institution: YouDescribe
-      # department: School of Natural Sciences <-- testing
-      year: 2024 - current
-      # description:
-      #   - Description 1.
-      #   - Description 2.
-      #   - title: Description 3.
-      #     contents:
-      #       - Sub-description 1.
-      #       - Sub-description 2.
+    - title: Research Assistant
+      institution: YouDescribe Lab
+      year: 2024 - Present
+      maindescription: "Accessibility research lab advancing video audio description (AD) for blind and low-vision users; leading systematic model evaluation to validate VLMs as raters and describers."
+      description:
+        - Leading key frame selection research to improve VLM-based evaluation and description of video AD.
+        - "Validated 100+ VLMs as raters across image captioning and video AD by building end-to-end evaluation pipelines with Hugging Face and LangChain-based API integrations, supporting 2 ongoing research submissions."
+        - Uncovered model-specific strengths and failure patterns across 7 quality rating dimensions by applying Item Response Theory (IRT) to compare VLM and human rater performance.
+    - title: SpaceTimeGPT
+      institution: NAIRR Pilot · Pittsburgh Supercomputing Center
+      year: 2025
+      maindescription: "NAIRR Pilot–funded project scaling a video captioning model (TimeSformer × GPT-2)."
+      description:
+        - "Prepared and transferred 60K+ VATEX video clips to PSC HPC clusters, preprocessing frames for efficient distributed data loading at scale."
+        - "Co-trained a 400M+ parameter video captioning model across 16 NVIDIA H100 GPUs (2 nodes) using DeepSpeed Pipeline Parallelism, achieving CIDEr 63 on the VATEX benchmark."
+    - title: Software Engineering Intern
+      institution: Astro Information Security
+      year: 2025
+      maindescription: "Information security startup; built internal email automation tooling."
+      description:
+        - Designed an email classification MCP pipeline to process 1K+ messages with automated rule-based filtering.
     - title: Tutor
       institution: TASC, San Francisco State University
       year: 2023 - 2025
-      # description:
-      #   - Description 1.
-      #   - Description 2.
-
-    - title: Software Engineer Intern
-      company: Astro Information Security
-      year: 2025
-
-    - title: Teaching Assistant
+    - title: Grader / Teaching Assistant
       institution: Department of Mathematics, San Francisco State University
       year: 2023 - 2025
+
+- title: Selected Projects
+  type: time_table
+  contents:
+    - title: eBay 2025 University Machine Learning Competition
+      year: 2025
+      description:
+        - "Ranked Top 4 by iteratively fine-tuning sequence labeling models for a German marketplace, reaching F1 = 0.94 through systematic preprocessing and model selection."
+    - title: ChillMate
+      year: 2024
+      description:
+        - "Built an AI mental health chatbot using React, MongoDB, and a RAG-powered conversation engine, while leading a team of 7 as Scrum Master through full project delivery."
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: "Beyond Lexical Overlap: Validating Semantic Similarity Metrics for LLM-Based Video Caption Augmentation"
+      year: 2026
+      description:
+        - "Juvenal Francisco Barajas*, <strong>Gio Jung</strong>*, Manali Seth, Lana Do, Malleeswari Jagabattuni, Andrew Scott, Shasta Ihorn, Alexander M. Blum, Vassilis Athitsos, Ilmi Yoon"
+        - In press at ICIIT 2026
+    - title: "Disentangling Local vs. Global Processing Dispositions in Autistic Cognition Using Item Response Theory Models"
+      year: 2026
+      description:
+        - "Alexander M. Blum, James M. Mason, Robin C. Irey, Yukie Toyama, Yunting Liu, <strong>Gio Jung</strong>, Andrew Scott, JinHo Kim, David Pearson"
+        - Journal of Discourse Processes
 
 - title: Poster Presentations
   type: time_table
@@ -64,25 +88,12 @@
       year: 2025
       description:
         - NeurIPS 2025 Poster Presentation
-        - "Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, <strong>Gio Jung</strong>,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon"
-        # Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, Gio Jung,Xuan Duy Anh Nguyen,Sanjay Mirani, Ilmi Yoon. 2025. ADx3: A Collaborative Workflow for High-Quality Accessible Audio Description. NeurIPS 2025. Poster Presentation, December 2025
-    - title: <a herf="https://drive.google.com/file/d/1B2hbqAiHKpWgwQDh_sW-kZO6IcyxV2XH/view"><em>GPT-4o vs. Humans in Rating Image Descriptions</a></em>
+        - "Authors: Lana Do, Shasta Ihorn, Charity Pitcher-Cooper, Juvenal Francisco Barajas, <strong>Gio Jung</strong>, Xuan Duy Anh Nguyen, Sanjay Mirani, Ilmi Yoon"
+    - title: <a href="https://drive.google.com/file/d/1B2hbqAiHKpWgwQDh_sW-kZO6IcyxV2XH/view"><em>GPT-4o vs. Humans in Rating Image Descriptions</em></a>
       year: 2024
       description:
         - GMiS CAHSI Research Poster Competition
         - "Authors: <strong>Gio Jung</strong>, Ilmi Yoon"
-
-# - title: Research / Publications
-#   type: time_table
-#   contents:
-#     - title: Publication Title 1
-#       year: 2025
-#       description:
-#         - Author 1, Author 2, Author 3. "Title of the Paper." <em>Journal Name</em>, vol. X, no. Y, pp. Z-ZZ, Year.
-#     - title: Publication Title 2
-#       year: 2024
-#       description:
-#         - Author A, Author B. "Another Paper Title." <em>Conference Name</em>, Year.
 
 - title: Honors / Awards / Grants
   type: time_table
@@ -97,19 +108,35 @@
     - year: 2017
       items:
         - Jessie F. L. York Scholarship, 1K
-# - title: Academic Interests
-#   type: nested_list
-#   contents:
-#     - title: Topic 1.
-#       items:
-#         - Description 1.
-#         - Description 2.
-#     - title: Topic 2.
-#       items:
-#         - Description 1.
-#         - Description 2.
 
-# - title: Other Interests
-#   type: list
-#   contents:
-#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Programming & Data
+      items:
+        - Python
+        - SQL
+        - Bash
+        - pandas
+        - NumPy
+        - data curation
+        - batch inference
+    - title: ML & Multimodal Systems
+      items:
+        - PyTorch
+        - Hugging Face Transformers
+        - multimodal pipelines
+        - fine-tuning
+        - RAG
+        - APIs
+    - title: Evaluation & MLOps
+      items:
+        - Item Response Theory (IRT)
+        - Kendall's tau
+        - BLEU
+        - CIDEr
+        - METEOR
+        - CLIPScore
+        - frame sampling
+        - DeepSpeed
+        - Weights & Biases

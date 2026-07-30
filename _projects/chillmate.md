@@ -4,6 +4,10 @@ title: ChillMate
 description: Stress Management App for SFSU
 img: assets/img/gio_images/projects/chillmate/chillmate_thumbnail.png
 order: 1
+selected: true
+tags:
+  - Mobile App
+  - Product
 ---
 
 **ChillMate** is a full-stack web application designed to support stress management and well-being for students and faculty at San Francisco State University (SFSU). The platform brings together multiple tools—reflection, organization, peer interaction, and AI-assisted guidance—into a single, accessible space.  

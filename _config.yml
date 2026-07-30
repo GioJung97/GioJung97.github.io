@@ -440,7 +440,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
   highlightjs:
     integrity:
       css:
@@ -638,6 +638,7 @@ jsonresume:
   - work
   - awards
   - certificates
+  - skills
   - skills
   - languages
   - interests

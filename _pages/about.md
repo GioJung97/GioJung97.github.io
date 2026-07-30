@@ -1,7 +1,8 @@
 ---
 layout: about
-title: About
+title: Home
 permalink: /
+tagline: Computer Vision and Machine Learning Engineer
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
@@ -33,4 +34,6 @@ I am equally interested in questions of reliability, interpretation, and trust i
 
 I value thoughtful problem-solving, clear reasoning, and responsible innovation, and aim to contribute to AI systems that are not only effective and technically sound, but also understandable and socially grounded. -->
 
-I'm a Computer Science graduate (MS, SFSU) with a focus on machine learning, computer vision, and AI systems. My work sits at the intersection of building and evaluating intelligent systems from training multimodal models to designing pipelines that rigorously measure how well they actually perform. I'm particularly drawn to computer vision and AI evaluation as fields where technical depth meets real impact: how a model sees, interprets, and acts on the world matters beyond benchmark numbers. That's why questions of reliability, interpretability, and trust are central to how I think about AI, especially in contexts where these systems directly shape human experience and decision-making.
+I'm a research engineer at YouDescribe Lab, an accessibility research group building video audio description to make video content accessible for blind and low-vision users. My work focuses on evaluating vision-language models as raters and describers, and building the multimodal ML pipelines that measure how well they actually perform.
+
+I'm also the co-founder and CTO of **Mosaic Cognition**, where we're building an authoring tool that turns stories into structured comics to help autistic learners with reading comprehension. I lead the engineering side of the product, from system architecture to data and inference pipelines to the full-stack build.

@@ -6,6 +6,11 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: $font-body;
+  font-size: 1.075rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   h1,
   h2,
@@ -14,6 +19,10 @@ body {
   h5,
   h6 {
     scroll-margin-top: 66px;
+    font-family: $font-heading;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 }
 

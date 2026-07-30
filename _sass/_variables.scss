@@ -32,9 +32,41 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// ---------------------------------------------------------------------------
+// Editorial redesign palette (modern-minimal, deep-teal accent)
+// ---------------------------------------------------------------------------
+// Light
+$ed-bg-light: #fafaf8; // warm off-white background
+$ed-surface-light: #ffffff; // cards / raised surfaces
+$ed-ink-light: #1a1a1a; // primary text
+$ed-muted-light: #6b6b6b; // secondary text
+$ed-accent-light: #0f766e; // deep teal accent
+$ed-hairline-light: #e8e8e4; // dividers / borders
+// Dark
+$ed-bg-dark: #101211;
+$ed-surface-dark: #181b1a;
+$ed-ink-dark: #ececea;
+$ed-muted-dark: #9a9a96;
+$ed-accent-dark: #2dd4bf; // brighter teal for dark bg
+$ed-hairline-dark: #2a2e2c;
+
+// Typography — heading font is a single variable so it can be swapped in one line
+$font-body:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif;
+$font-heading:
+  "Space Grotesk",
+  #{$font-body};
+
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
+$code-bg-color-light: rgba($ed-accent-light, 0.06);
 $code-bg-color-dark: #2c3237 !default;
 
 // Font awesome location

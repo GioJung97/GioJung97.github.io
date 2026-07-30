@@ -1,35 +1,34 @@
-<div class="col">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable">
-      {% if project.img %}
-        {%
-          include figure.liquid
-          loading="eager"
-          path=project.img
-          sizes = "250px"
-          alt="project thumbnail"
-          class="card-img-top"
-        %}
-      {% endif %}
-      <div class="card-body">
-        <h2 class="card-title">{{ project.title }}</h2>
-        <p class="card-text">{{ project.description }}</p>
-        <div class="row ml-1 mr-1 p-0">
-          {% if project.github %}
-            <div class="github-icon">
-              <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-              </div>
-              {% if project.github_stars %}
-                <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                  <i class="fa-solid fa-star"></i>
-                  <span id="{{ project.github_stars }}-stars"></span>
-                </span>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
+{% assign card_url = project.redirect | default: project.url | relative_url %}
+{% if project.redirect %}{% assign card_url = project.redirect %}{% endif %}
+<a class="work-card{% if project.pinned %} work-card--pinned{% endif %}" href="{{ card_url }}">
+  {% if project.pinned %}
+    <span class="work-card__pin"><i class="ti ti-pin" aria-hidden="true"></i>Pinned</span>
+  {% endif %}
+  {% if project.img %}
+    <div class="work-card__media">
+      {%
+        include figure.liquid
+        loading="eager"
+        path=project.img
+        sizes="(min-width: 768px) 45vw, 95vw"
+        alt=project.title
+        class="work-card__img"
+      %}
     </div>
-  </a>
-</div>
+  {% else %}
+    <div class="work-card__media work-card__media--placeholder" aria-hidden="true"></div>
+  {% endif %}
+  <div class="work-card__body">
+    <h3 class="work-card__title">{{ project.title }}</h3>
+    {% if project.description %}
+      <p class="work-card__desc">{{ project.description | strip_html }}</p>
+    {% endif %}
+    {% if project.tags and project.tags.size > 0 %}
+      <ul class="work-card__tags">
+        {% for tag in project.tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</a>

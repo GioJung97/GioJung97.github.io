@@ -12,3 +12,8 @@ node_modules/
 vendor
 .idea
 .venv
+
+# Local agent-skill installs (not part of the site)
+.claude/
+.agents/
+skills-lock.json
