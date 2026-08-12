@@ -501,6 +501,134 @@ ul.task-list input[type="checkbox"] {
   border-top: 1px solid var(--global-divider-color);
 }
 
+/* ---------------------------------------------------------------------------
+ * News rotator (home): one item at a time, cycling through the recent few
+ * ------------------------------------------------------------------------- */
+.news-rotator {
+  --news-rotate-interval: 6000ms;
+}
+
+/* every slide sits in the same grid cell, so the stage is as tall as the
+   longest item and swapping never shifts the page */
+.news-rotator__stage {
+  display: grid;
+}
+
+.news-rotator__item {
+  grid-area: 1 / 1;
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* incoming settles down from above, outgoing continues down and out, so the
+   whole set reads as moving top to bottom */
+.news-rotator__item.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.news-rotator__item.is-leaving {
+  opacity: 0;
+  visibility: visible;
+  transform: translateY(14px);
+}
+
+.news-rotator__date {
+  flex: 0 0 8rem;
+  font-family: $font-heading;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+}
+
+.news-rotator__body {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.6;
+}
+
+.news-rotator__nav {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.news-rotator__dot {
+  position: relative;
+  width: 22px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--global-divider-color);
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.3s ease;
+
+  &.is-active {
+    width: 44px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--global-theme-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}
+
+.news-rotator.is-ticking .news-rotator__dot.is-active::after {
+  animation: news-dot-fill var(--news-rotate-interval) linear forwards;
+}
+
+.news-rotator.is-paused .news-rotator__dot.is-active::after {
+  animation-play-state: paused;
+}
+
+@keyframes news-dot-fill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 575px) {
+  .news-rotator__item {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .news-rotator__date {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-rotator__item {
+    transition: none;
+  }
+
+  .news-rotator__dot.is-active::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
 /* Home hero: small avatar beside the name */
 .hero-identity {
   display: flex;
