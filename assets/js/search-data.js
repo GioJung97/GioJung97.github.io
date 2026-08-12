@@ -64,11 +64,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
             },},{id: "news-passed-oral-defense-with-the-title-evaluation-of-vision-language-models-using-item-response-theory",
           title: 'Passed Oral Defense with the title: “Evaluation of Vision Language Models using Item...',
           description: "",
@@ -80,6 +75,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-the-paper-beyond-lexical-overlap-validating-semantic-similarity-metrics-for-llm-based-video-caption-augmentation-has-been-accepted-at-iciit-2026",
           title: 'The paper “Beyond Lexical Overlap: Validating Semantic Similarity Metrics for LLM-Based Video Caption...',
+          description: "",
+          section: "News",},{id: "news-the-paper-toward-scalable-audio-description-quality-control-a-workflow-for-evaluating-human-and-vlm-raters-has-been-conditionally-accepted-to-assets-2026-in-vila-nova-de-gaia-portugal",
+          title: 'The paper “Toward Scalable Audio Description Quality Control: A Workflow for Evaluating Human...',
           description: "",
           section: "News",},{id: "projects-chillmate",
           title: 'ChillMate',
@@ -106,6 +104,11 @@ ninja.data = [{
           description: "Title: &quot;Evaluation of Vision Language Models using Item Response Theory&quot;",
           section: "Projects",handler: () => {
               window.location.href = "/projects/master_thesis/";
+            },},{id: "projects-mosaic",
+          title: 'MOSAIC',
+          description: "An authoring tool that turns stories into structured comics to support reading comprehension and story composition for autistic learners",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mosaic/";
             },},{id: "projects-spacetimegpt",
           title: 'SpaceTimeGPT',
           description: "Video Captioning Model with TimeSformer + GPT-2 via DeepSpeed Pipeline Parallelism",
