@@ -21,7 +21,9 @@ module Jekyll
 
       def directory_files_content
         target_path = File.join(directory, '**', '*')
-        Dir[target_path].map{|f| File.read(f) unless File.directory?(f) }.join
+        # sort for a stable digest across filesystems, binread so that any
+        # non-text file in the tree cannot break the join with an encoding error
+        Dir[target_path].sort.map{|f| File.binread(f) unless File.directory?(f) }.join
       end
 
       def file_content
@@ -43,7 +45,10 @@ module Jekyll
     end
 
     def bust_css_cache(file_name)
-      CacheDigester.new(file_name: file_name, directory: 'assets/_sass').digest!
+      # the stylesheet sources live in _sass, not assets/_sass; pointing at a
+      # directory that does not exist digests an empty string, so the query
+      # string never changes and main.css stays cached across releases
+      CacheDigester.new(file_name: file_name, directory: '_sass').digest!
     end
   end
 end
