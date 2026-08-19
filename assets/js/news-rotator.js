@@ -113,18 +113,35 @@
       });
     });
 
-    // Hold on the current item while the reader is engaging with it, and only
-    // resume once nothing is holding it: not hovered, not focused, tab visible.
+    // Hovering does not pause: the rotation keeps running under the cursor.
+    // Keyboard focus still holds it, so an item cannot swap out from under
+    // someone tabbing through a link inside it. Clicking a dot focuses that
+    // button as well, and that must not pause, so only :focus-visible counts.
+    function isKeyboardFocusInside() {
+      var active = document.activeElement;
+      if (!active || !root.contains(active)) {
+        return false;
+      }
+      try {
+        return active.matches(":focus-visible");
+      } catch (err) {
+        // no :focus-visible support, so treat any focus as held
+        return true;
+      }
+    }
+
     function resumeIfIdle() {
-      if (document.hidden || root.matches(":hover") || root.contains(document.activeElement)) {
+      if (document.hidden || isKeyboardFocusInside()) {
         return;
       }
       start();
     }
 
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", resumeIfIdle);
-    root.addEventListener("focusin", stop);
+    root.addEventListener("focusin", function () {
+      if (isKeyboardFocusInside()) {
+        stop();
+      }
+    });
     root.addEventListener("focusout", function () {
       // activeElement is still settling during focusout, so check on the next tick
       window.setTimeout(resumeIfIdle, 0);
