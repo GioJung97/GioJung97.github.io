@@ -20,8 +20,11 @@ nav_order: 2
     </li>
     <li>
       <div class="pub-title">Beyond Lexical Overlap: Validating Semantic Similarity Metrics for LLM-Based Video Caption Augmentation</div>
-      <div class="pub-authors">Juvenal Francisco Barajas*, <strong>Gio Jung</strong>*, Manali Seth, Lana Do, Malleeswari Jagabattuni, Andrew Scott, Shasta Ihorn, Alexander Mario Blum, Vassilis Athitsos, Ilmi Yoon</div>
-      <div class="pub-venue">In press at ICIIT, 2026</div>
+      <div class="pub-authors">Juvenal Francisco Barajas*, <strong>Gio Jung</strong>*, Manali Seth, Lana Do, Malleeswari Jagabattuni, Andrew Taylor Scott, Shasta Ihorn, Alexander Mario Blum, Vassilis Athitsos, Ilmi Yoon</div>
+      <div class="pub-venue">ICIIT 2026, Da Nang, Vietnam</div>
+      <div class="pub-links">
+        <a class="pub-badge" href="https://doi.org/10.1145/3805862.3805887" target="_blank" rel="noopener">DOI</a>
+      </div>
     </li>
     <li>
       <div class="pub-title">Using Item-Response Theory to Disentangle Local vs. Global Processing Dispositions in Autistic Cognition: Comparing Multi-Modal Comics vs. Text-Based Narratives in a Randomized Study</div>
