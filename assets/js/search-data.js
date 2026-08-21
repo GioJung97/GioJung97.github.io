@@ -64,11 +64,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
             },},{id: "news-passed-oral-defense-with-the-title-evaluation-of-vision-language-models-using-item-response-theory",
           title: 'Passed Oral Defense with the title: “Evaluation of Vision Language Models using Item...',
           description: "",
