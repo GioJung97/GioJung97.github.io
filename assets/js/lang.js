@@ -19,11 +19,13 @@ let setLangSetting = (langSetting) => {
 };
 
 // Determine the expected language setting, which can be "en" or "ko".
-// Default is "en".
+// On a first visit (nothing saved yet), default to Korean for visitors in the
+// Asia/Seoul timezone and English everywhere else.
 let determineLangSetting = () => {
   let langSetting = localStorage.getItem("lang");
   if (langSetting != "en" && langSetting != "ko") {
-    langSetting = "en";
+    let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    langSetting = timeZone == "Asia/Seoul" ? "ko" : "en";
   }
   return langSetting;
 };
