@@ -419,10 +419,14 @@ ul.task-list input[type="checkbox"] {
 }
 
 #lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   padding: 0 0.4rem;
+  margin-left: 0.5rem;
 }
 
 // Social (bottom)
