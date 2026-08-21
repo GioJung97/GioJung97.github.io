@@ -45,13 +45,16 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
+            {% if page.permalink == '/' %}
+              {% assign about_title = page.title %}
+              {% assign about_title_ko = page.title_ko | default: page.title %}
+            {% endif %}
           {% endfor %}
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+              <span class="lang-en">{{- about_title -}}</span><span class="lang-ko">{{- about_title_ko -}}</span>
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -110,7 +113,7 @@
                     {%- assign url = p.url -%}
                   {%- endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
+                    <span class="lang-en">{{- p.title -}}</span><span class="lang-ko">{{- p.title_ko | default: p.title -}}</span>
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -125,6 +128,15 @@
               <button id="light-toggle" title="Change theme">
                 <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
                 <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+          {% if site.enable_langtoggle %}
+            <!-- Toggle language -->
+            <li class="toggle-container">
+              <button id="lang-toggle" title="Switch language / 언어 전환">
+                <span id="lang-toggle-en">KO</span>
+                <span id="lang-toggle-ko">EN</span>
               </button>
             </li>
           {% endif %}

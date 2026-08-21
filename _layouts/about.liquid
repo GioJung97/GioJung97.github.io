@@ -71,7 +71,7 @@ layout: default
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2 class="news-heading">
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit"> <span class="lang-en">News</span><span class="lang-ko">소식</span> </a>
       </h2>
       {% include news_rotator.liquid %}
     {% endif %}
@@ -81,8 +81,10 @@ layout: default
     {% if selected_projects.size > 0 %}
       <section class="selected-work">
         <div class="section-heading">
-          <h2>Selected Work</h2>
-          <a class="section-heading__link" href="{{ '/projects/' | relative_url }}">All work &rarr;</a>
+          <h2><span class="lang-en">Selected Work</span><span class="lang-ko">주요 작업물</span></h2>
+          <a class="section-heading__link" href="{{ '/projects/' | relative_url }}">
+            <span class="lang-en">All work &rarr;</span><span class="lang-ko">전체 작업물 보기 &rarr;</span>
+          </a>
         </div>
         <div class="work-grid">
           {% for project in selected_projects %}

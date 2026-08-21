@@ -32,7 +32,8 @@
           </time>
           <div class="news-rotator__body">
             {% if item.inline %}
-              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              <span class="lang-en">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+              <span class="lang-ko">{{ item.content_ko | default: item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
             {% else %}
               <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
             {% endif %}

@@ -84,6 +84,14 @@
   </script>
 {% endif %}
 
+{% if site.enable_langtoggle %}
+  <!-- Language Toggle -->
+  <script src="{{ '/assets/js/lang.js' | relative_url | bust_file_cache }}"></script>
+  <script>
+    initLang();
+  </script>
+{% endif %}
+
 {% if page.map %}
   <!-- GeoJSON support via Leaflet -->
   <link

@@ -145,3 +145,31 @@ html[data-theme-setting="light"] {
     display: block;
   }
 }
+
+// Language toggle (English / Korean)
+
+.lang-ko {
+  display: none;
+}
+
+#lang-toggle-ko {
+  display: none;
+}
+
+html[data-lang-setting="ko"] {
+  .lang-en {
+    display: none;
+  }
+
+  .lang-ko {
+    display: revert;
+  }
+
+  #lang-toggle-en {
+    display: none;
+  }
+
+  #lang-toggle-ko {
+    display: block;
+  }
+}

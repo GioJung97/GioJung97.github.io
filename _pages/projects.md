@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Work
+title_ko: 작업물
 permalink: /projects/
 # description: Projects page under construction.
 nav: true

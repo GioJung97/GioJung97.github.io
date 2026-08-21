@@ -2,6 +2,7 @@
 layout: page
 permalink: /publications/
 title: Research
+title_ko: 연구
 # description: selected publications
 nav: true
 nav_order: 2
