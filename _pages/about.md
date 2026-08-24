@@ -36,4 +36,4 @@ I value thoughtful problem-solving, clear reasoning, and responsible innovation,
 
 I'm a research engineer at YouDescribe Lab, an accessibility research group building video audio description to make video content accessible for blind and low-vision users. My work focuses on evaluating vision-language models as raters and describers, and building the multimodal ML pipelines that measure how well they actually perform.
 
-I'm also the co-founder and CTO of **Mosaic Cognition**, where we're building an authoring tool that turns stories into structured comics to help autistic learners with reading comprehension. I lead the engineering side of the product, from system architecture to data and inference pipelines to the full-stack build.
+I'm also a founding member and CTO of **Mosaic Cognition**, where we're building an authoring tool that turns stories into structured comics to help autistic learners with reading comprehension. I lead the engineering side of the product, from system architecture to data and inference pipelines to the full-stack build.
