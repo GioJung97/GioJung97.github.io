@@ -2,6 +2,7 @@
 layout: cv
 permalink: /cv/
 title: CV
+title_ko: 이력서
 nav: true
 nav_order: 3
 cv_pdf: CV.pdf # you can also use external links here

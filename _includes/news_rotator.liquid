@@ -1,0 +1,63 @@
+{% comment %}
+  Home page news: shows one item at a time and rotates through the most recent
+  few. The /news page keeps the full table in news.liquid.
+{% endcomment %}
+{% if site.news != blank %}
+  {% assign rotator_limit = page.announcements.limit | default: 3 %}
+  {% assign news_total = site.news | size %}
+  {% if news_total < rotator_limit %}
+    {% assign shown_count = news_total %}
+  {% else %}
+    {% assign shown_count = rotator_limit %}
+  {% endif %}
+  {% assign recent_news = site.news | reverse %}
+  <div
+    class="news-rotator"
+    data-news-rotator
+    data-news-interval="6000"
+    role="group"
+    aria-label="Recent news"
+  >
+    <div class="news-rotator__stage">
+      {% for item in recent_news limit: shown_count %}
+        <article
+          class="news-rotator__item{% if forloop.first %} is-active{% endif %}"
+          data-news-slide
+          {% unless forloop.first %}
+            aria-hidden="true"
+          {% endunless %}
+        >
+          <time class="news-rotator__date" datetime="{{ item.date | date_to_xmlschema }}">
+            {{ item.date | date: '%b %d, %Y' }}
+          </time>
+          <div class="news-rotator__body">
+            {% if item.inline %}
+              <span class="lang-en">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+              <span class="lang-ko">{{ item.content_ko | default: item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+            {% else %}
+              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if shown_count > 1 %}
+      <div class="news-rotator__nav">
+        {% for item in recent_news limit: shown_count %}
+          <button
+            type="button"
+            class="news-rotator__dot{% if forloop.first %} is-active{% endif %}"
+            data-news-dot
+            aria-label="Show news item {{ forloop.index }} of {{ shown_count }}"
+            {% if forloop.first %}
+              aria-current="true"
+            {% endif %}
+          ></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% else %}
+  <p>No news so far...</p>
+{% endif %}
