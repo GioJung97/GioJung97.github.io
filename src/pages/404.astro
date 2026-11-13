@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import { profile } from "../data/site";
+---
+<Base title="Page not found">
+  <div class="single">
+    <h1>Page not found</h1>
+    <p style="color: var(--muted)">This page doesn't exist. <a href="/">Go to {profile.name}'s home page</a>.</p>
+  </div>
+</Base>

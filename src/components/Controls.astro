@@ -1,0 +1,18 @@
+---
+import T from "./T.astro";
+import { ui } from "../data/site";
+---
+<div class="controls">
+  <span class="langs" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-set-lang="ko" aria-pressed="false">KO</button>
+  </span>
+  <span class="sep" aria-hidden="true"></span>
+  <button type="button" data-toggle-theme aria-label="Toggle color theme">
+    <span class="when-light"><T t={ui.dark} /></span><span class="when-dark"><T t={ui.light} /></span>
+  </button>
+</div>
+<style>
+  :global(html[data-theme="dark"]) .when-light,
+  :global(html:not([data-theme="dark"])) .when-dark { display: none; }
+</style>

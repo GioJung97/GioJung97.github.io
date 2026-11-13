@@ -1,0 +1,82 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/site";
+
+interface Props { title?: string; description?: string; }
+const { title, description = profile.description } = Astro.props;
+const fullTitle = title ? `${title} · ${profile.name}` : profile.name;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#e6eaee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161a1f" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap"
+    />
+    <!-- Set theme and language before first paint so nothing flickers. -->
+    <script is:inline>
+      (function () {
+        var d = document.documentElement, t = null, l = null;
+        try { t = localStorage.getItem("theme"); l = localStorage.getItem("lang"); } catch (e) {}
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (l !== "en" && l !== "ko") {
+          var tz = "";
+          try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) {}
+          l = tz === "Asia/Seoul" ? "ko" : "en";
+        }
+        d.setAttribute("data-theme", t);
+        d.setAttribute("data-lang", l);
+        d.setAttribute("lang", l);
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      const root = document.documentElement;
+      const save = (k: string, v: string) => { try { localStorage.setItem(k, v); } catch {} };
+      const syncPressed = () => {
+        const lang = root.getAttribute("data-lang");
+        document.querySelectorAll<HTMLButtonElement>("[data-set-lang]").forEach((b) =>
+          b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)),
+        );
+      };
+      syncPressed();
+      document.addEventListener("click", (e) => {
+        const el = (e.target as Element).closest("button");
+        if (!el) return;
+        if (el.dataset.setLang) {
+          root.setAttribute("data-lang", el.dataset.setLang);
+          root.setAttribute("lang", el.dataset.setLang);
+          save("lang", el.dataset.setLang);
+          syncPressed();
+        } else if (el.hasAttribute("data-toggle-theme")) {
+          const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          save("theme", next);
+        }
+      });
+      // Follow the OS theme until the visitor picks one.
+      matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+        let stored = null;
+        try { stored = localStorage.getItem("theme"); } catch {}
+        if (!stored) root.setAttribute("data-theme", e.matches ? "dark" : "light");
+      });
+    </script>
+  </body>
+</html>

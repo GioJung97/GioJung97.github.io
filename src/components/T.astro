@@ -1,0 +1,9 @@
+---
+// Renders a bilingual string. Both languages are in the HTML; CSS shows the active one.
+// Strings may contain trusted inline HTML from src/data (e.g. <b>, <strong>).
+import type { L10n } from "../data/site";
+interface Props { t: L10n | string; }
+const { t } = Astro.props;
+const v = typeof t === "string" ? { en: t } : t;
+---
+{v.ko ? (<><span class="en" set:html={v.en} /><span class="ko" set:html={v.ko} /></>) : <Fragment set:html={v.en} />}

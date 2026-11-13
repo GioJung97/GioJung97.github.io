@@ -1,0 +1,35 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import T from "../../components/T.astro";
+import Controls from "../../components/Controls.astro";
+import { profile, ui } from "../../data/site";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((p) => ({ params: { slug: p.id }, props: { project: p } }));
+}
+
+interface Props { project: CollectionEntry<"projects">; }
+const { project } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+---
+<Base title={data.title} description={data.summary}>
+  <div class="shell project">
+    <aside class="aside">
+      <a class="back" href="/#projects">← {profile.name}</a>
+      <div>
+        <div class="meta"><T t={{ en: data.kind, ko: data.kind_ko }} />{data.year && <> · {data.year}</>}</div>
+        <h1 class="title"><T t={{ en: data.title, ko: data.title_ko }} /></h1>
+      </div>
+      <p class="lede"><T t={{ en: data.summary, ko: data.summary_ko }} /></p>
+      <div class="tags">{data.tags.map((t) => <span>{t}</span>)}</div>
+      <p class="note ko">{ui.englishOnly.ko}</p>
+      <Controls />
+    </aside>
+    <article class="prose">
+      <Content />
+    </article>
+  </div>
+</Base>

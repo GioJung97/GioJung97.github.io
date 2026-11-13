@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Controls from "../components/Controls.astro";
+import { profile, snapshots } from "../data/site";
+
+const files = import.meta.glob<{ default: ImageMetadata }>("../assets/images/snapshots/*.jpg", { eager: true });
+const shots = snapshots.map((s) => ({ ...s, img: files[`../assets/images/snapshots/${s.file}`].default }));
+---
+<Base title="Snapshots">
+  <div class="single">
+    <header><a class="back" href="/">← {profile.name}</a><Controls /></header>
+    <h1>Snapshots</h1>
+    <div class="grid">
+      {shots.map((s) => (
+        <figure>
+          <Image src={s.img} alt={s.alt} width={600} height={600} fit="cover" loading="lazy" />
+          <figcaption>{s.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</Base>

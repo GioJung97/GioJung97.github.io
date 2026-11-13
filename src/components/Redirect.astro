@@ -1,0 +1,16 @@
+---
+// Old al-folio URLs now live as sections on the home page.
+interface Props { to: string; }
+const { to } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <link rel="canonical" href={new URL(to, Astro.site)} />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+  </head>
+  <body><a href={to}>Continue</a></body>
+</html>
