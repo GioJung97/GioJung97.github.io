@@ -188,7 +188,18 @@ export type Role = { title: string; org: string; years: string; summary?: string
 
 export const experience: Role[] = [
   {
-    title: "Research Assistant",
+    title: "Founding Engineer",
+    org: "Mosaic Cognition",
+    years: "2026 – Present",
+    summary: "AI platform that turns user-written stories into structured comics for K-12 reading and story comprehension.",
+    points: [
+      "Orchestrated a 4-provider LLM pipeline (GPT, Claude, Gemini, Whisper), enforcing schema-typed outputs end-to-end to eliminate free-text parsing failures downstream.",
+      "Built a 2-stage automated QC pipeline (local heuristics + GPT-4o-mini vision check), detecting rendering defects at ~$0.0002/check before triggering re-renders.",
+      "Fixed cross-panel character/style drift by anchoring generation on one reference image, capping references at 3 after quality degraded beyond the threshold.",
+    ],
+  },
+  {
+    title: "Research Engineer",
     org: "YouDescribe Lab",
     years: "2024 – Present",
     summary:
